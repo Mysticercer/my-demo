@@ -1,0 +1,268 @@
+// 主题全局设置默认值
+$theme-color: var(--themeColor, #1b7bbb);
+$theme-color-dark: var(--themeColorDark, #003a4e);
+$theme-color-dark-gray: var(--themeColorDarkGray, rgba(0, 46, 64, 0.4));
+$theme-color-border-dark: var(--themeColorBorderDark, #0c4155);
+$theme-color-light: var(--themeColorLight, #00cafd);
+$theme-color-black: var(--themeColorBlack, 255, 255, 255);
+$theme-color-text: var(--themeColorText, #FFFFFF);
+$theme-color-text-gray: var(--themeColorTextGray, rgba(255, 255, 255, 0.8));
+$theme-font-color: var(--font-color, rgba(255, 255, 255, 0.8));
+
+:export {
+  themeColor: $theme-color;
+  themeColorDark: $theme-color-dark;
+  themeColorLight: $theme-color-light;
+  themeColorDarkGray: $theme-color-dark-gray;
+  themeColorBorderDark: $theme-color-border-dark;
+  themeColorBlack: $theme-color-black;
+  themeColorText: $theme-color-text;
+  themeColorTextGray: $theme-color-text-gray;
+  themeFontColor: $theme-font-color;
+}
+
+// element-plus的颜色变量
+:root {
+  --el-fill-color-blank: rgba(0, 50, 68, 0.6);
+  --el-border-color: rgba(0, 168, 255, 0.5);
+  --el-text-color-disabled: rgba(0, 168, 255, 0.8);
+  --el-border-radius-base: 0;
+  --el-text-color-regular: #FFFFFF;
+  --el-border-color-light: rgba(0, 168, 255, 0.8);
+  --el-bg-color-overlay: rgba(0, 50, 68, 1);
+  --el-fill-color-light: rgba(0, 50, 68, 0.6);
+  --el-bg-color: #003c55;
+  --el-text-color-primary: #FFFFFF;
+  --el-font-size-base: 12px;
+  --el-disabled-bg-color: rgba(0, 50, 68, 0.6);
+  --el-mask-color: rgba(0, 0, 0, 0.9);
+}
+
+// 表格
+.el-table__row--striped {
+  background: linear-gradient(270deg, rgba(36, 76, 120, 0), rgba(50, 96, 145, 0.3)) !important;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background: none !important;
+}
+
+// form表单
+.el-form-item {
+  margin-bottom: 20px !important;
+}
+
+.el-form-item__label {
+  color: $theme-color-text !important;
+}
+
+.el-form-item__content {
+  min-width: 175px !important;
+}
+
+.el-select__wrapper,
+.el-input__wrapper {
+  font-size: 12px !important;
+}
+
+.el-select-dropdown {
+  max-height: 260px;
+  overflow-y: auto !important;
+}
+
+.el-popper {
+  --el-popper-border-radius: 0px !important;
+}
+
+.el-date-editor {
+  --el-date-editor-width: 160px !important;
+}
+
+// 按钮
+.el-button {
+  background: url('../img/btnbg.png') center center no-repeat !important;
+  background-size: 100% 100% !important;
+  border: 1px solid $theme-color-light !important;
+  color: $theme-color-text !important;
+}
+
+.el-button:hover {
+  color: $theme-color-light !important;
+}
+
+// dialog
+.el-dialog {
+  background: url('../img/theme_black_bg.png') center center no-repeat !important;
+  background-size: 100% 100% !important;
+  --el-dialog-padding-primary: 0 !important;
+  --el-dialog-title-font-size: 14px !important;
+
+  // --el-dialog-margin-top: 5vh !important;
+  .el-dialog__header {
+    position: relative;
+    background: url('../img/contenthbg.png') center center no-repeat !important;
+    background-size: 100% 100% !important;
+    padding: 10px;
+  }
+
+  .el-dialog__header::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 2px solid;
+    box-sizing: border-box;
+    border-image: linear-gradient(to right, #4384ac, #4384ac);
+    pointer-events: none;
+  }
+
+  .el-dialog__header::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg,
+        rgb(0, 255, 230) 0%,
+        rgb(0, 255, 230) 25%,
+        rgb(49, 174, 255) 25%,
+        rgb(49, 174, 255) 50%,
+        transparent 50%,
+        transparent 100%);
+  }
+
+  .el-dialog__body {
+    padding: 15px !important;
+  }
+
+  .el-dialog__footer {
+    padding-bottom: 15px !important;
+    text-align: center;
+  }
+}
+
+.el-overlay-dialog {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.position_a_l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cc-tabs {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+
+  .el-tabs__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    // padding-left: 15px;
+    padding-right: 5px;
+    height: 4.5vmin;
+    min-height: 42px;
+    font-size: 1vmin;
+    position: relative;
+    background: url('@/assets/img/contenthbg.png') center center no-repeat;
+    background-size: 100% 100%;
+    border-bottom: 0px;
+
+    &::before {
+      @extend .position_a_l;
+      content: '';
+      border: 2px solid;
+      box-sizing: border-box;
+      border-image: linear-gradient(to right, #4384ac, #4384ac);
+      pointer-events: none;
+    }
+
+    &::after {
+      @extend .position_a_l;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg,
+          rgb(0, 255, 230) 0%,
+          rgb(0, 255, 230) 25%,
+          rgb(49, 174, 255) 25%,
+          rgb(49, 174, 255) 50%,
+          transparent 50%,
+          transparent 100%);
+    }
+
+    .el-tabs__item {
+      background-color: rgba(0, 0, 0, 0) !important;
+      border: 0 !important;
+
+      &.is-active {
+        color: #FFFFFF;
+        border: 0;
+      }
+
+      &:hover {
+        color: #FFFFFF !important;
+      }
+
+      &+.el-tabs__item {
+        border-left: 1px solid $theme-color-border-dark !important;
+      }
+    }
+  }
+
+  .el-tabs__content {
+    border: 1px solid $theme-color-border-dark;
+    padding: 0px;
+  }
+
+  .real-content {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+  }
+}
+
+// 自定义模板样式1
+.container-1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  >header {
+    padding: 0px 32px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: $theme-color-text;
+    border-bottom: 1px solid $theme-color;
+
+    &.no-border {
+      border: 0px;
+    }
+  }
+
+  >main {
+    height: calc(100% - 70px);
+    padding: 0px 20px;
+
+    .operate-btn {
+      color: $theme-color-light;
+      cursor: pointer;
+
+      &+.operate-btn {
+        margin-left: 20px;
+      }
+    }
+  }
+}
